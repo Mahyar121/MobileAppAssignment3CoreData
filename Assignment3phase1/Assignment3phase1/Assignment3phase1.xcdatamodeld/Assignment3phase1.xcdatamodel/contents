@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15A284" minimumToolsVersion="Automatic">
+    <entity name="Course" representedClassName="Course" syncable="YES">
+        <attribute name="finalWeight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hwWeight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="midtermWeight" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="sendCourseInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CourseEnrollment" inverseName="sendUpdatedGrades" inverseEntity="CourseEnrollment" syncable="YES"/>
+    </entity>
+    <entity name="CourseEnrollment" representedClassName="CourseEnrollment" syncable="YES">
+        <attribute name="courseName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="finalGrade" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hwGrade" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="midtermGrade" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalGrade" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="calcGrade" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="courseEnrolling" inverseEntity="Student" syncable="YES"/>
+        <relationship name="sendUpdatedGrades" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="sendCourseInfo" inverseEntity="Course" syncable="YES"/>
+    </entity>
+    <entity name="Student" representedClassName="Student" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="courseEnrolling" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CourseEnrollment" inverseName="calcGrade" inverseEntity="CourseEnrollment" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Course" positionX="-36" positionY="9" width="128" height="105"/>
+        <element name="CourseEnrollment" positionX="0" positionY="45" width="128" height="150"/>
+        <element name="Student" positionX="27" positionY="72" width="128" height="105"/>
+    </elements>
+</model>

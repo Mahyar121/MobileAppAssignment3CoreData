@@ -1,0 +1,468 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf110
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww14100\viewh11140\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Mahyar Haji Babaie, CWID 891418949, CPSC 411\
+\
+Assignment 3\
+\
+Objective:\
+This program is a simple mobile application that calculates a student\'92s grade using core data.\
+\
+Requirement:\
+\
+1. The program will open up and you will need to click on add student\
+1.a.Enter the Following Information\
+1.b.Student\'92s First Name\
+1.c.Student\'92s Last Name\
+1.d.Student\'92s CWID\
+\
+2. The program will then ask you to enter course information\
+2.a number of courses you take\
+2.b course name\
+2.c hw score\
+2.d hw weight\
+2.e midterm score\
+2.f midterm weight\
+2.g final score\
+2.h final weight\
+\
+3. The program will calculate the grade and store it in the student object core data\
+\
+Issue/ Limitation:\
+1.The weights for the grade need to be within 0.0 - 1.0\
+\
+\
+Design:\
+\
+I created 3 entities, Student, Course, CourseEnrollment\
+\
+The first entity Student has first name, last name, student id for attributes. It has a M relationship to CourseEnrollment.\
+\
+The second entity Course has final weight, hw weight, midterm weight for attributes. It has a M relationship to CourseEnrollment.\
+\
+The third entity CourseEnrollment has course name, final,hw,midterm,total grades for attributes. It has a 1 relationship to Course and Student.\
+\
+I used the app data.m file to do all the calculations and console commands.\
+\
+Test Cases:\
+\
+Test Case#1\
+Student First: mahyar\
+Student Last: babaie\
+Student CWID: 123\
+CourseNumbers: 1\
+Course Name: math\
+HWGrade: 100\
+HWWeight: .2\
+MidtermGrade: 100\
+MidtermWeight: .3\
+FinalGrade: 100\
+FinalWeight: .5\
+\
+Test Case #1 Result:\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b\fs22 \cf0 \CocoaLigature0 2016-11-17 22:31:07.374 Assignment3phase1[1971:43750] /Users/mahyarbabaie/Documents/CoreData_Project.sqlite\
+2016-11-17 22:31:07.374 Assignment3phase1[1971:43750] Enter your First Name: \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 mahyar\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:31:09.702 Assignment3phase1[1971:43750] Enter your Last Name: \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 babaie\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:31:10.721 Assignment3phase1[1971:43750] Enter your CWID:\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 123\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:31:12.555 Assignment3phase1[1971:43750] Successfully persist Student objects.\
+2016-11-17 22:31:12.559 Assignment3phase1[1971:43750] How many courses did you take?\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 1\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:31:14.197 Assignment3phase1[1971:43750] Enter the Course Name\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 math\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:31:16.055 Assignment3phase1[1971:43750] Enter your Avg HW Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:31:16.876 Assignment3phase1[1971:43750] Enter the weight for hw\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .2\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:31:17.983 Assignment3phase1[1971:43750] Enter your MidTerm Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:31:19.264 Assignment3phase1[1971:43750] Enter the weight for midterm\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .3\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:31:20.078 Assignment3phase1[1971:43750] Enter your Final Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:31:21.164 Assignment3phase1[1971:43750] Enter the weight for final\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .5\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:31:21.955 Assignment3phase1[1971:43750] Successfully persist Course objects.\
+2016-11-17 22:31:21.969 Assignment3phase1[1971:43750] Successfully persist Student and Course relation.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0\fs24 \cf0 \CocoaLigature1 Test Case#2\
+Student First: john\
+Student Last: smith\
+Student CWID: 222\
+CourseNumbers: 2\
+Course Name: Math\
+HWGrade: 100\
+HWWeight: .3\
+MidtermGrade: 100\
+MidtermWeight: .3\
+FinalGrade: 100\
+FinalWeight: .4\
+Course Name: Science\
+HWGrade: 80\
+HWWeight: .2\
+MidtermGrade: 70\
+MidtermWeight: .3\
+FinalGrade: 100\
+\pard\tx720\tx1440\tx1881\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 FinalWeight: .5\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+Test Case#2 Result:\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b\fs22 \cf0 \CocoaLigature0 2016-11-17 22:42:25.547 Assignment3phase1[2050:46722] /Users/mahyarbabaie/Documents/CoreData_Project.sqlite\
+2016-11-17 22:42:25.547 Assignment3phase1[2050:46722] Enter your First Name: \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 john\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:42:37.574 Assignment3phase1[2050:46722] Enter your Last Name: \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 smith\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:42:38.725 Assignment3phase1[2050:46722] Enter your CWID:\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 222\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:42:48.814 Assignment3phase1[2050:46722] Successfully persist Student objects.\
+2016-11-17 22:42:48.816 Assignment3phase1[2050:46722] How many courses did you take?\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 2\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:42:50.908 Assignment3phase1[2050:46722] Enter the Course Name\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 Math\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:42:52.503 Assignment3phase1[2050:46722] Enter your Avg HW Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:42:54.931 Assignment3phase1[2050:46722] Enter the weight for hw\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .3\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:42:58.582 Assignment3phase1[2050:46722] Enter your MidTerm Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:42:59.770 Assignment3phase1[2050:46722] Enter the weight for midterm\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .3\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:43:00.664 Assignment3phase1[2050:46722] Enter your Final Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:43:02.440 Assignment3phase1[2050:46722] Enter the weight for final\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .4\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:43:04.382 Assignment3phase1[2050:46722] Enter the Course Name\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 Science\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:43:08.155 Assignment3phase1[2050:46722] Enter your Avg HW Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 80\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:43:10.604 Assignment3phase1[2050:46722] Enter the weight for hw\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .2\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:43:11.630 Assignment3phase1[2050:46722] Enter your MidTerm Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 70\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:43:13.404 Assignment3phase1[2050:46722] Enter the weight for midterm\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .3\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:43:14.864 Assignment3phase1[2050:46722] Enter your Final Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:43:16.270 Assignment3phase1[2050:46722] Enter the weight for final\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .5\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:43:17.814 Assignment3phase1[2050:46722] Successfully persist Course objects.\
+2016-11-17 22:43:17.830 Assignment3phase1[2050:46722] Successfully persist Student and Course relation.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0\fs24 \cf0 \CocoaLigature1 Test Case#3\
+Student First: bob\
+Student Last: dole\
+Student CWID: 333\
+CourseNumbers: 3\
+Course Name: Math\
+HWGrade: 100\
+HWWeight: .2\
+MidtermGrade: 100\
+MidtermWeight: .3\
+FinalGrade: 100\
+FinalWeight: .5\
+Course Name: Science\
+HWGrade: 100\
+HWWeight: .3\
+MidtermGrade: 100\
+MidtermWeight: .3\
+FinalGrade: 100\
+\pard\tx720\tx1440\tx1881\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 FinalWeight: .4\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Course Name: History\
+HWGrade: 100\
+HWWeight: .4\
+MidtermGrade: 100\
+MidtermWeight: .2\
+FinalGrade: 100\
+\pard\tx720\tx1440\tx1881\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 FinalWeight: .4\
+\
+Test Case#3 Result:\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b\fs22 \cf0 \CocoaLigature0 2016-11-17 22:46:46.326 Assignment3phase1[2072:47780] /Users/mahyarbabaie/Documents/CoreData_Project.sqlite\
+2016-11-17 22:46:46.326 Assignment3phase1[2072:47780] Enter your First Name: \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 bob\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:46:53.010 Assignment3phase1[2072:47780] Enter your Last Name: \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 dole\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:46:54.213 Assignment3phase1[2072:47780] Enter your CWID:\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 333\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:46:56.457 Assignment3phase1[2072:47780] Successfully persist Student objects.\
+2016-11-17 22:46:56.462 Assignment3phase1[2072:47780] How many courses did you take?\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 3\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:46:58.194 Assignment3phase1[2072:47780] Enter the Course Name\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 Math\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:03.465 Assignment3phase1[2072:47780] Enter your Avg HW Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:05.376 Assignment3phase1[2072:47780] Enter the weight for hw\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .2\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:06.330 Assignment3phase1[2072:47780] Enter your MidTerm Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:07.766 Assignment3phase1[2072:47780] Enter the weight for midterm\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .3\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:08.597 Assignment3phase1[2072:47780] Enter your Final Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:10.633 Assignment3phase1[2072:47780] Enter the weight for final\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .5\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:11.566 Assignment3phase1[2072:47780] Enter the Course Name\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 Science\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:14.419 Assignment3phase1[2072:47780] Enter your Avg HW Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:16.279 Assignment3phase1[2072:47780] Enter the weight for hw\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .3\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:17.313 Assignment3phase1[2072:47780] Enter your MidTerm Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:18.523 Assignment3phase1[2072:47780] Enter the weight for midterm\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .3\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:19.337 Assignment3phase1[2072:47780] Enter your Final Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:20.482 Assignment3phase1[2072:47780] Enter the weight for final\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .4\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:21.770 Assignment3phase1[2072:47780] Enter the Course Name\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 History\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:25.214 Assignment3phase1[2072:47780] Enter your Avg HW Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:26.927 Assignment3phase1[2072:47780] Enter the weight for hw\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .4\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:29.212 Assignment3phase1[2072:47780] Enter your MidTerm Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:30.313 Assignment3phase1[2072:47780] Enter the weight for midterm\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .2\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:31.208 Assignment3phase1[2072:47780] Enter your Final Score\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 100\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:32.457 Assignment3phase1[2072:47780] Enter the weight for final\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 .4\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b \cf0 2016-11-17 22:47:34.854 Assignment3phase1[2072:47780] Successfully persist Course objects.\
+2016-11-17 22:47:34.871 Assignment3phase1[2072:47780] Successfully persist Student and Course relation.}
